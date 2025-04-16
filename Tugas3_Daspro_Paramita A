@@ -1,0 +1,26 @@
+#membuat data1
+A<-c("A1","A1","A2","A2","A3","A3","A4","A4")
+Kel<-c(1,2,1,2,1,2,1,2)
+resp<-c(1.000000,1.428571,1.857143,2.85714,2.714286,3.142857,3.571429,4.000000)
+
+data1<-data.frame(A,Kel,resp)
+data1
+
+#membuat variabel baru
+baru<-c(8:1)
+data1<-cbind(data1,baru)
+data1
+
+#mengambil data yang termasuk kelompok 1
+data1[data1[,"Kel"]==1,]
+
+#mengambil yang termasuk kelompok 1 atau A1
+subset(data1, Kel == 1 | A == "A1")
+
+#mengurutkan berdasarkan Kel ascending
+urut1<-data1[order(data1$Kel),]
+urut1
+
+#mengurutkan berdasarkan kelompok dan respon secara descending
+urut2<-data1[order(-data1$Kel, -data1$resp),]
+urut2
